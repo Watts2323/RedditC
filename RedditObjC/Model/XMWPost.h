@@ -16,9 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSString *title;
 @property (nonatomic, readonly) NSNumber *commentCount;
 @property (nonatomic, readonly) NSNumber *ups;
+@property (nonatomic, readonly) NSString *imageUrl;
 
 //like our memberwise Initializer
--(instancetype)initWithTitle:(NSString *)title commentCount: (NSNumber *)commentCount ups:(NSNumber *) ups;
+-(instancetype)initWithTitle:(NSString *)title commentCount: (NSNumber *)commentCount ups:(NSNumber *) ups imageUrl:(NSString *)imageUrl;
 
 //we need a init for the JSON dictionary
 

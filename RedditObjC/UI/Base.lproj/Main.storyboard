@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Sub Reddit Table View Controller-->
         <scene sceneID="dPG-Lr-dmr">
             <objects>
-                <tableViewController id="sl7-yU-ZhM" sceneMemberID="viewController">
+                <tableViewController id="sl7-yU-ZhM" customClass="SubRedditTableViewController" customModule="RedditObjC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Oy8-ZV-RbK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="218" id="h8h-NY-Db0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="218" id="h8h-NY-Db0" customClass="PostTableViewCell" customModule="RedditObjC" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="218"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h8h-NY-Db0" id="dH9-bO-O6B">
@@ -69,6 +69,12 @@
                                         <constraint firstItem="mQ2-yd-3UL" firstAttribute="centerX" secondItem="dH9-bO-O6B" secondAttribute="centerX" id="zmt-xf-8df"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentCountLabel" destination="0iM-n9-NOh" id="BOh-6P-q3t"/>
+                                    <outlet property="postImageView" destination="Q2Z-rM-GgE" id="QgE-8R-paw"/>
+                                    <outlet property="titleLabel" destination="QYf-26-Cco" id="jxV-c3-RYl"/>
+                                    <outlet property="upsLabel" destination="0iM-n9-NOh" id="Tdo-fG-edT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -76,6 +82,9 @@
                             <outlet property="delegate" destination="sl7-yU-ZhM" id="Ht8-6J-dJ2"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="redditSearchBar" destination="QBi-Nz-7XD" id="NXS-hb-Vl5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GH4-zv-bXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
